@@ -1,10 +1,11 @@
-package com.chef.service;
+package com.chef.order.service;
 
-import com.chef.facade.OrderFacade;
+import com.chef.order.model.Order;
+import com.chef.order.facade.OrderFacade;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -14,7 +15,9 @@ public class OrderServiceImpl implements OrderService {
 
 
     @Override
-    public String orderReport() {
+    public List<Order> orderReport() {
         return orderFacade.orderReport();
+
+
     }
 }
